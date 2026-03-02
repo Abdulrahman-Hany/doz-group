@@ -43,6 +43,41 @@
     /* Font for Arabic */
     --font-arabic: 'Noto Sans Arabic', sans-serif;
 }
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #c59560;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #c59560;
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
 
 /* Animation Keyframes */
 @keyframes fadeInUp {
@@ -1140,7 +1175,7 @@ html[lang="ar"] .status {
     padding-left: 28px;
     position: relative;
     color: var(--text-secondary);
-    font-size: 14px;
+    font-size: 17px;
 }
 
 .checklist li::before {
@@ -1171,7 +1206,7 @@ html[lang="ar"] .table {
 
 .table__row {
     display: grid;
-    grid-template-columns: 260px 180px 1fr;
+    grid-template-columns: 260px 180px 3fr 1fr;
     gap: 20px;
     padding: 20px 24px;
     border-top: 1px solid var(--stroke);
@@ -1179,7 +1214,7 @@ html[lang="ar"] .table {
 }
 
 html[lang="ar"] .table__row {
-    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-columns: 1fr 1fr 3fr 1fr;
 }
 
 .table__row:first-child {
@@ -1206,18 +1241,16 @@ html[lang="ar"] .table__row {
 }
 
 .table__tag {
-    justify-self: start;
     font-size: 12px;
-    padding: 8px 14px;
-    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
     border: 1px solid var(--stroke-gold);
     background: rgba(212, 165, 116, .06);
     color: var(--text-secondary);
-}
-
-html[lang="ar"] .table__tag {
-    justify-self: end;
-    /* Align to right for RTL */
+    /* padding: 8px; */
+    height: 50px;
 }
 
 .table__desc {
@@ -1866,3 +1899,6 @@ html {
 html[dir="rtl"] .hero__copy>*:nth-child(2) {
     line-height: 1.3;
 }
+
+
+
